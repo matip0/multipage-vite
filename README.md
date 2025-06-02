@@ -1,1 +1,1 @@
-# multipage-vite
+# vite-multipage-starter
