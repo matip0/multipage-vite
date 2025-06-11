@@ -6,9 +6,23 @@
     <title>Vite App</title>
     <link rel="stylesheet" href="/style.css">
   </head>
-  <body>
-    <div id="app">
-      <a href="/login/">Login</a>
+  <body class="bg-gray-100 text-gray-800">
+    <main class="max-w-3xl mx-auto mt-10 p-4">
+      <div class="flex justify-between mb-6">
+        <button id="add-article-button" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"> Dodaj artykuł</button>
+        <button id="logout-button" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"> Wyloguj</button>
+      </div>
+      <section id="article-list"></section>
+    </main>
+   <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+     <div class="bg-white p-6 rounded-xl w-full max-w-md">
+       <form id="modal-form" class="space-y-4">
+          <input id="modal-title" type="text" placeholder="Tytuł" class="w-full border p-2 rounded" required />
+          <textarea id="modal-content" placeholder="Treść" class="w-full border p-2 rounded"></textarea>
+          <input id="modal-author" type="text" placeholder="Autor" class="w-full border p-2 rounded" />
+          <button type="submit" id="modal-submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Zapisz</button>
+        </form>
+      </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
