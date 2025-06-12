@@ -10,6 +10,7 @@ const popupAuthor = document.getElementById('popup-author')
 const popupSubmit = document.getElementById('popup-submit')
 const logoutButton = document.getElementById('logout-button')
 const addArticleButton = document.getElementById('add-article-button')
+const loginButton = document.getElementById('login-button');
 
 let editArticle = null
 
@@ -66,6 +67,10 @@ async function fetchArticles() {
   articleList.innerHTML = ''
   const { data: sessionData } = await supabase.auth.getSession()
   const user = sessionData.session?.user
+
+  if (!user) {
+    loginButton.classList.remove('hidden');
+  }
 
   if (!user) {
     addArticleButton.classList.add('hidden')
