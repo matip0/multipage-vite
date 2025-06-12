@@ -13,7 +13,7 @@ export default defineConfig({
   build: {
     emptyOutDir: true,
     rollupOptions: {
-      input: inputs,
+      input: entries,
     },
     outDir: resolve(__dirname, 'dist'),
   },
